@@ -8,7 +8,7 @@ A full-stack task management application deployed on AWS, built with React, Flas
 - DynamoDB for data persistence
 
 ## Architecture
-![Architecture Diagram](download/architecture.png)
+![Architecture Diagram](Downloads/architecture.png)
 
 ## Prerequisites
 - AWS Account
