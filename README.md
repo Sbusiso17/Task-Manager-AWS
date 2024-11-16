@@ -9,7 +9,7 @@ A full-stack task management application deployed on AWS, built with React, Flas
 
 ## Architecture
 ![architecture](https://github.com/user-attachments/assets/7d3efe81-0122-4948-98b9-3071671498f6)
-![Architecture Diagram](Downloads/architecture.png)
+
 
 ## Prerequisites
 - AWS Account
