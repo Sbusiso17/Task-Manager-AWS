@@ -1,4 +1,3 @@
-```javascript
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Task from './Task';
@@ -70,36 +69,41 @@ const TaskList = () => {
     }
   };
 
-  if (loading) return Loading tasks...;
-  if (error) return Error: {error};
+  if (loading) return <div>Loading tasks...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
-    
-      Task Manager
+    <div className="max-w-md mx-auto">
+      <h1 className="text-2xl font-bold mb-4">Task Manager</h1>
       
-      
-        
-          <input
-            type="text"
-            value={newTask}
-            onChange={(e) => setNewTask(e.target.value)}
-            placeholder="Add a new task..."
-            className="flex-1 p-2 border rounded"
-          />
-          
-            Add
-          
-        
-      
+      <form onSubmit={createTask} className="flex mb-4">
+        <input
+          type="text"
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+          placeholder="Add a new task..."
+          className="flex-1 p-2 border rounded"
+        />
+        <button 
+          type="submit" 
+          className="ml-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Add
+        </button>
+      </form>
 
-      
+      <div className="divide-y">
         {tasks.map(task => (
-          
+          <Task 
+            key={task.id} 
+            task={task} 
+            onUpdate={updateTask} 
+            onDelete={deleteTask} 
+          />
         ))}
-      
-    
+      </div>
+    </div>
   );
 };
 
 export default TaskList;
-```
